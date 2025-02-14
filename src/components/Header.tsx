@@ -35,15 +35,33 @@ function Header(){
                 
                 
             >
-            <LuHouse
-                cursor="pointer"
-            />
-            <LuCog 
-                cursor="pointer"
-            />
-            <LuLogIn 
-                cursor="pointer"
-            />
+                <Box
+                    as={LuHouse}
+                    boxSize={8} 
+                    color="#5A7D9A" 
+                    transition="color 0.3s"
+                    _hover={{ color: "white" }}
+                    cursor="pointer"
+                ></Box>
+                <Box
+                     as={LuCog}
+                     boxSize={8} 
+                     color="#5A7D9A" 
+                     transition="color 0.3s"
+                     _hover={{ color: "white" }}
+                     cursor="pointer"
+
+                ></Box>
+                <Box
+                     as={LuLogIn}
+                     boxSize={8} 
+                     color="#5A7D9A" 
+                     transition="color 0.3s"
+                     _hover={{ color: "white" }}
+                     cursor="pointer"
+
+                ></Box>
+           
                
                 
             </Box>
