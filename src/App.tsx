@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react"
 import './App.css'
 import Header from "./components/Header"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home"
+import Home from "./components/home"
 import Settings from "./components/settings"
 import Login from "./components/login"
 import  Slider  from "./components/Slider";
