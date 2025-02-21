@@ -1,5 +1,5 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
-import { LuAccessibility, LuCog, LuFileText, LuHouse } from "react-icons/lu";
+import { LuUser , LuFileText, LuHouse } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
 
@@ -40,7 +40,7 @@ function Header(){
                     boxSize={8} 
                     color="#5A7D9A" 
                     transition="color 0.3s"
-                    _hover={{ color: "white" }}
+                    _hover={{ color: "#385065" }}
                     cursor="pointer"
                     onClick={() => navigate("/")}
                 ></Box>
@@ -49,31 +49,22 @@ function Header(){
                      boxSize={8} 
                      color="#5A7D9A" 
                      transition="color 0.3s"
-                     _hover={{ color: "white" }}
+                     _hover={{ color: "#385065" }}
                      cursor="pointer"
-                     onClick={() => navigate("/settings")}
+                     onClick={() => navigate("/Modelos")}
 
                 ></Box>
                 <Box
-                     as={LuCog}
+                     as={LuUser }
                      boxSize={8} 
                      color="#5A7D9A" 
                      transition="color 0.3s"
-                     _hover={{ color: "white" }}
+                     _hover={{ color: "#385065" }}
                      cursor="pointer"
                      onClick={() => navigate("/login")}
 
                 ></Box>
-                <Box
-                     as={LuAccessibility}
-                     boxSize={8} 
-                     color="#5A7D9A" 
-                     transition="color 0.3s"
-                     _hover={{ color: "white" }}
-                     cursor="pointer"
-                     onClick={() => navigate("/Slider")}
-
-                ></Box>
+               
            
                
                 

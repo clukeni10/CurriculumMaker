@@ -1,50 +1,82 @@
-import {Box, Text, Heading} from '@chakra-ui/react'
+import { Box, Text, Heading, Grid, GridItem, Icon } from "@chakra-ui/react";
 import { MdDashboardCustomize } from "react-icons/md";
-import { AiOutlineFilePdf } from "react-icons/ai";
-import { AiOutlineFileWord } from "react-icons/ai";
+import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
 import { FaRobot } from "react-icons/fa";
 import { RiLightbulbFlashLine } from "react-icons/ri";
 
-function FuncionalidadesPrincipais(){
-    return (
-        <Box height="300px" bg="white" color="#43637A" display="flex" alignItems="center" justifyContent="space-around" gap="5">
-           
-                <Box display="flex" flexDirection="column" alignItems="center" gap="3" width="400px">
-                    <Heading fontWeight="600" textStyle="2xl">Modelos prontos e personalizáveis</Heading>
-                    <MdDashboardCustomize size={100} color="#43637A"/>
-                    <Text textStyle="sm" textAlign="center" fontWeight="bold" color="#777777">Escolha entre diversos modelos profissionais e personalize com suas informações para criar um currículo único e atrativo.</Text>
-                </Box>
+const features = [
+  {
+    title: "Modelos prontos e personalizáveis",
+    icon: MdDashboardCustomize,
+    description:
+      "Escolha entre diversos modelos profissionais e personalize com suas informações para criar um currículo único e atrativo.",
+  },
+  {
+    title: "Exportação em PDF e Word",
+    icon: [AiOutlineFilePdf, AiOutlineFileWord],
+    description:
+      "Salve seu currículo em formatos populares (PDF ou Word), facilitando o compartilhamento e envio para oportunidades de emprego.",
+  },
+  {
+    title: "Assistente inteligente (IA)",
+    icon: FaRobot,
+    description:
+      "Receba sugestões automáticas para seções como objetivos e experiências, otimizando seu currículo com a ajuda da inteligência artificial.",
+  },
+  {
+    title: "Sugestões de frases para experiências",
+    icon: RiLightbulbFlashLine,
+    description:
+      "Inspire-se com frases prontas para descrever suas experiências de forma clara, impactante e adequada ao mercado de trabalho.",
+  },
+];
 
-                <Box display="flex" flexDirection="column" alignItems="center" gap="3" width="400px">
-                    <Heading fontWeight="600" textStyle="2xl">Exportação em PDF e Word</Heading>
-                    <Box display="flex">
-                    <AiOutlineFilePdf size={100} color="#43637A"/>
-                    <AiOutlineFileWord size={100} color="#43637A"/>
-                    </Box>
-                    
-                    <Text textStyle="sm" textAlign="center" fontWeight="bold" color="#777777">Salve seu currículo em formatos populares (PDF ou Word), facilitando o compartilhamento e envio para oportunidades de emprego.</Text>
+export default function FuncionalidadesPrincipais() {
+  return (
+    <Box bg="white" color="#43637A" py={12} px={8}>
+      <Heading textAlign="center" mb={10} fontSize="3xl" fontWeight="bold">
+        Funcionalidades Principais
+      </Heading>
 
-                </Box>
+      <Grid
+        templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+        gap={10}
+        justifyContent="center"
+      >
+        {features.map((feature, index) => (
+          <GridItem
+            key={index}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            textAlign="center"
+            p={6}
+            bg="gray.100"
+            borderRadius="lg"
+            boxShadow="lg"
+            transition="all 0.3s"
+            _hover={{ transform: "scale(1.05)", boxShadow: "xl" }}
+          >
+            {Array.isArray(feature.icon) ? (
+              <Box display="flex" gap={4}>
+                {feature.icon.map((IconComp, i) => (
+                  <Icon as={IconComp} key={i} boxSize={16} color="#43637A" />
+                ))}
+              </Box>
+            ) : (
+              <Icon as={feature.icon} boxSize={16} color="#43637A" />
+            )}
 
-                <Box display="flex" flexDirection="column" alignItems="center" gap="3" width="400px">
-                    <Heading fontWeight="600" textStyle="2xl">Assistente inteligente (IA)</Heading>
+            <Heading fontSize="xl" fontWeight="bold" mt={4}>
+              {feature.title}
+            </Heading>
 
-                    <FaRobot  size={100} color="#43637A"/>
-                    <Text textStyle="sm" textAlign="center" fontWeight="bold" color="#777777">Receba sugestões automáticas para seções como objetivos e experiências, otimizando seu currículo com a ajuda da inteligência artificial.</Text>
-
-                </Box>
-
-                <Box display="flex" flexDirection="column" alignItems="center" gap="3" width="400px">
-                <Heading fontWeight="600" textStyle="2xl">Sugestões de frases para experiências profissionais</Heading>
-
-                    <RiLightbulbFlashLine  size={100} color="#43637A"/>
-                    <Text textStyle="sm" textAlign="center" fontWeight="bold" color="#777777">Inspire-se com frases prontas para descrever suas experiências de forma clara, impactante e adequada ao mercado de trabalho.</Text>
-
-                </Box>
-
-
-        </Box>
-    )
+            <Text fontSize="md" mt={3} color="gray.600">
+              {feature.description}
+            </Text>
+          </GridItem>
+        ))}
+      </Grid>
+    </Box>
+  );
 }
-
-export default FuncionalidadesPrincipais;

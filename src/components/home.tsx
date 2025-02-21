@@ -1,13 +1,13 @@
 import { Box } from "@chakra-ui/react";
 import FuncionalidadesPrincipais from "./FuncionalidadesPrincipais";
-import Main from "./Main";
+import Slider from "./Slider";
 
 export default function Home() {
     return (
       <Box>
 
 
-        <Main></Main>
+        <Slider></Slider>
         <FuncionalidadesPrincipais></FuncionalidadesPrincipais>
       </Box>
     );
